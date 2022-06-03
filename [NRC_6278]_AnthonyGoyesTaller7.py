@@ -149,4 +149,30 @@ class Grafo:
         # No retorna nada
         return None
 if __name__ == "__main__":
-    ...
+    #Ejecución del algoritmo búsqueda por anchura
+    #Se instancia la clase
+    # Primer caso
+    grafo = Grafo(7, dirigido=False)
+ 
+    # Añade las aristas con peso por defecto 1
+    grafo.agregar_arista(0, 1)
+    grafo.agregar_arista(0, 2)
+    grafo.agregar_arista(1, 3)
+    grafo.agregar_arista(1, 4)
+    grafo.agregar_arista(2, 3)
+    grafo.agregar_arista(2, 5)
+    grafo.agregar_arista(3, 4)
+    grafo.agregar_arista(3, 5)
+    grafo.agregar_arista(4, 5)
+    grafo.agregar_arista(4, 6)
+    grafo.agregar_arista(5, 6)
+
+    # Imprime la lista de adyacencia como tipo de dato "diccionario": {(nodo, peso)}
+    grafo.imprimir_lista_adyacencia()
+    # Imprime el recorrido con el algoritmo de búsqueda por profundidad
+    camino_resultante = []
+    camino_resultante = grafo.bpp(0, 6)
+    print(f"El camino obtenido desde el nodo 0 hasta el 6 es: {camino_resultante}")
+
+    # Se da un salto de línea
+    print()
