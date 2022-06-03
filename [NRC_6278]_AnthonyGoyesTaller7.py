@@ -144,7 +144,7 @@ class Grafo:
                 # Si el nodo adyacente del nodo descubierto no existe retorna el camino y continúa con la otra rama del grafo.
                 if resultado is not None:
                     return resultado
-        # Presenta la información de la lista y la vacía
+        # Retorna el último elemento de la pila y la presenta
         camino.pop()
         # No retorna nada
         return None
@@ -174,5 +174,27 @@ if __name__ == "__main__":
     camino_resultante = grafo.bpp(0, 6)
     print(f"El camino obtenido desde el nodo 0 hasta el 6 es: {camino_resultante}")
 
+    # Se da un salto de línea
+    print()
+
+    #Ejecución del algoritmo búsqueda por anchura
+    #Se instancia la clase
+    # Segundo caso
+    grafo = Grafo(4)
+ 
+    # Añade las aristas con su peso 
+    grafo.agregar_arista(0, 1, 4)
+    grafo.agregar_arista(0, 3, 3)
+    grafo.agregar_arista(1, 3, 2)
+    grafo.agregar_arista(3, 2, 2)
+    grafo.agregar_arista(2, 0, 5)
+
+    # Imprime la lista de adyacencia como tipo de dato "diccionario": {(nodo, peso)}
+    grafo.imprimir_lista_adyacencia()
+
+    # Imprime el recorrido con el algoritmo de búsqueda por profundidad
+    camino_resultante = []
+    camino_resultante = grafo.bpp(nodo_inicial=0, nodo_objetivo=2)
+    print(f"El camino obtenido desde el nodo 0 hasta el 2 es: {camino_resultante}")
     # Se da un salto de línea
     print()
